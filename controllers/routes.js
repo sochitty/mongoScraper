@@ -54,7 +54,7 @@ router.get("/scrape", function(req, res) {
         
             var result ={};
             //console.log("has image, chilrend title link: "+ $(element).children(".item-info").children(".title").children().attr("href"));
-            result.link = $(element).children(".item-info").children(".title").children().attr("href");
+            result.link = $(element).children(".item-info").children(".h3").children().attr("href");
       
             result.title =$(element).children(".item-info").children(".title").children().text();
             result.snipText=$(element).children(".item-info").children(".teaser").children("a").text();
