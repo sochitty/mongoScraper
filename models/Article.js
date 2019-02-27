@@ -13,15 +13,9 @@ var ArticleSchema = new Schema({
         type: String,
         required: true
     },
-    snipText:{
-        type: String
-    },
-    imageLink:{
-        type: String
-    },
     comments:[{
         type: Schema.Types.ObjectId,
-        ref: "Comment"   
+        ref: "Comm"   
     }]
 
 });
