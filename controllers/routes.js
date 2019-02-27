@@ -39,7 +39,7 @@ router.get("/",function(req,res){
 // A GET request to scrape the echojs website
 router.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
-    request("http://www.lifehacker.com", function(error, response, html) {
+    request("http://www.npr.org/sections/world/", function(error, response, html) {
         
         
           var $ = cheerio.load(html);
@@ -54,7 +54,7 @@ router.get("/scrape", function(req, res) {
         
             var result ={};
             //console.log("has image, chilrend title link: "+ $(element).children(".item-info").children(".title").children().attr("href"));
-            result.link = $(element).children(".item-info").children(".h3").children().attr("href");
+            result.link = $(element).children(".item-info").children(".title").children().attr("href");
       
             result.title =$(element).children(".item-info").children(".title").children().text();
             result.snipText=$(element).children(".item-info").children(".teaser").children("a").text();
